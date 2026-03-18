@@ -74,17 +74,37 @@ const featuredProducts = [
   }
 ];
 
-const FeaturedProducts = () => {
+
+type FeaturedProductsProps = {
+  category?: string;
+  onlyNew?: boolean;
+  title?: string;
+  subtitle?: string;
+};
+
+const FeaturedProducts = ({
+  category,
+  onlyNew,
+  title = "Featured Products",
+  subtitle = "Discover our most loved beauty essentials",
+}: FeaturedProductsProps) => {
+  let filteredProducts = category
+    ? featuredProducts.filter((product) => product.category === category)
+    : featuredProducts;
+
+  if (onlyNew) {
+    filteredProducts = filteredProducts.filter((product) => product.isNew);
+  }
   return (
     <section className="py-16 bg-card">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between mb-12">
           <div>
             <h2 className="font-elegant text-4xl font-bold text-foreground mb-4">
-              Featured Products
+              {title}
             </h2>
             <p className="text-xl text-muted-foreground">
-              Discover our most loved beauty essentials
+              {subtitle}
             </p>
           </div>
           <Button variant="outline" className="hidden md:flex">
@@ -94,7 +114,7 @@ const FeaturedProducts = () => {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-          {featuredProducts.map((product, index) => (
+          {filteredProducts.map((product, index) => (
             <div
               key={product.id}
               className="animate-fade-in"
