@@ -12,30 +12,13 @@ const Footer = () => {
         { name: 'Makeup', href: '/category/makeup' },
         { name: 'Haircare', href: '/category/haircare' },
         { name: 'Fragrances', href: '/category/fragrances' },
-        { name: 'New Arrivals', href: '/new-arrivals' },
-        { name: 'Best Sellers', href: '/best-sellers' }
+        { name: 'New Arrivals', href: '/new-arrivals' }
       ]
     },
     {
       title: 'Customer Care',
       links: [
-        { name: 'Contact Us', href: '/contact' },
-        { name: 'Size Guide', href: '/size-guide' },
-        { name: 'Shipping Info', href: '/shipping' },
-        { name: 'Returns', href: '/returns' },
-        { name: 'FAQ', href: '/faq' },
-        { name: 'Track Order', href: '/track-order' }
-      ]
-    },
-    {
-      title: 'About',
-      links: [
-        { name: 'Our Story', href: '/about' },
-        { name: 'Careers', href: '/careers' },
-        { name: 'Press', href: '/press' },
-        { name: 'Sustainability', href: '/sustainability' },
-        { name: 'Affiliate Program', href: '/affiliate' },
-        { name: 'Gift Cards', href: '/gift-cards' }
+        { name: 'Contact Us', href: '/contact' }
       ]
     }
   ];
@@ -148,6 +131,9 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-background/70 text-sm">
             <span>© 2024 Ntrisha Women's Choice. All rights reserved.</span>
             <div className="flex space-x-4">
+              <Link to="/contact" className="hover:text-primary transition-colors">
+                Contact Us
+              </Link>
               <Link to="/privacy" className="hover:text-primary transition-colors">
                 Privacy Policy
               </Link>

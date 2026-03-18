@@ -17,6 +17,7 @@ import UserDashboard from "./pages/UserDashboard";
 import LoginSignup from "./pages/LoginSignup";
 import Cart from "./pages/Cart";
 import OrderForm from "./pages/OrderForm";
+import Contact from "./pages/Contact";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
@@ -47,6 +48,7 @@ const App = () => {
                   <Route path="/login" element={<LoginSignup />} />
                   <Route path="/cart" element={<Cart />} />
                   <Route path="/order" element={<OrderForm />} />
+                  <Route path="/contact" element={<Contact />} />
                   <Route
                     path="/new-arrivals"
                     element={
